@@ -1,7 +1,6 @@
 package me.icro.t20_validparentheses;
 
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * 描述:
