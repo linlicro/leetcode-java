@@ -27,7 +27,18 @@ public class Solution {
         if (null == root) return new ArrayList<>();
         List<Integer> list = new ArrayList<>();
         LinkedList<TreeNode> linkedList = new LinkedList<>();
-        // todo
+        //LinkedList<TreeNode> linkedList2 = new LinkedList<>();
+        linkedList.addFirst(root);
+        while (!linkedList.isEmpty()) {
+            TreeNode note = linkedList.removeFirst();
+            //linkedList2.addFirst(note);
+            list.add(0, note.val);
+            if (null != note.left) linkedList.addFirst(note.left);
+            if (null != note.right) linkedList.addFirst(note.right);
+        }
+        //while (!linkedList2.isEmpty()) {
+        //    list.add(linkedList2.removeLast().val);
+        //}
         return list;
     }
 
