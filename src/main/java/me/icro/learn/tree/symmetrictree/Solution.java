@@ -1,5 +1,7 @@
 package me.icro.learn.tree.symmetrictree;
 
+import java.util.LinkedList;
+
 /**
  * 描述:
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
@@ -22,6 +24,31 @@ public class Solution {
         return false;
     }
 
+    public boolean isSymmetricIter(TreeNode root) {
+        if (null == root) return true;
+        LinkedList<TreeNode> linkedList = new LinkedList<>();
+        linkedList.addFirst(root.left);
+        linkedList.addFirst(root.right);
+        while (!linkedList.isEmpty()) {
+            TreeNode tmpLeft = linkedList.removeLast();
+            TreeNode tmpRight = linkedList.removeLast();
+            if (null == tmpLeft && null == tmpRight)
+                continue;
+            if (null == tmpLeft && null != tmpRight)
+                return false;
+            if (null != tmpLeft && null == tmpRight)
+                return false;
+            if (tmpLeft.val != tmpRight.val)
+                return false;
+
+            linkedList.addFirst(tmpLeft.left);
+            linkedList.addFirst(tmpRight.right);
+            linkedList.addFirst(tmpLeft.right);
+            linkedList.addFirst(tmpRight.left);
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -30,7 +57,8 @@ public class Solution {
         root.left.right = new TreeNode(4);
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
-        System.out.println(new Solution().isSymmetric(root));
+        //System.out.println(new Solution().isSymmetric(root));
+        System.out.println(new Solution().isSymmetricIter(root));
     }
 
 }
