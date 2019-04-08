@@ -16,8 +16,15 @@ package me.icro.learn.tree.constructbinarytree.frominorderandpostorder;
  * 1   3
  *
  * 思考过程:
- *  * postOrder最后的元素是该二叉树的根节点
- *  * 从inOrder中找到该根节点, 将inOrder分为两部分, 前面部分是树的左边, 后面部分是树的右边.
+ *  * step1. 找到二叉树的根节点, 是postOrder最后的元素
+ *  * step2. 从inOrder中找到该元素(mid为序号), 将inOrder分为两部分, 前面部分是树的左边, 后面部分是树的右边.
+ *  * step3. 从postOrder中, 去除最后一个元素(为根节点), 将postOrder也分为两部分:
+ *      left. [postOrder_start_index, postOrder_start_index + (mid - inOrder_start_index) - 1]
+ *      right. [postOrder_start_index + (mid - inOrder_start_index), postOrder_end_index - 1]
+ *      注: (mid - inOrder_start_index) ==> 树的左边元素个数(left_tree_length);
+ *          left_tree_length - 1 == postOrder的左侧个数;
+ *          postOrder_start_index + left_tree_length == postOrder的右侧开始索引.
+ *   * step4. 递归step1, 直至元素遍历完
  *
  * @author Lin
  * @since 2019-04-07 8:00 AM
