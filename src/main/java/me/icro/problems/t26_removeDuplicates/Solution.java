@@ -1,4 +1,4 @@
-package me.icro.t26_removeDuplicates;
+package me.icro.problems.t26_removeDuplicates;
 
 /**
  * 描述:

@@ -1,4 +1,4 @@
-package me.icro.t9_palindrome_number;
+package me.icro.problems.t9_palindrome_number;
 
 /**
  * 描述:

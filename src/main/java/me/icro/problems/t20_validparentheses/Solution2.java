@@ -1,4 +1,4 @@
-package me.icro.t20_validparentheses;
+package me.icro.problems.t20_validparentheses;
 
 import java.util.LinkedList;
 

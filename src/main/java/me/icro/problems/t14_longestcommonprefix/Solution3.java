@@ -1,4 +1,4 @@
-package me.icro.t14_longestcommonprefix;
+package me.icro.problems.t14_longestcommonprefix;
 
 /**
  * 描述:

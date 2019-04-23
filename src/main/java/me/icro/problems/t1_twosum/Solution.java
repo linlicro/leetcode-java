@@ -1,4 +1,4 @@
-package me.icro.t1_twosum;
+package me.icro.problems.t1_twosum;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package me.icro.t7_reverseInteger;
+package me.icro.problems.t7_reverseInteger;
 
 /**
  * Created by Lin on 2019/3/6.

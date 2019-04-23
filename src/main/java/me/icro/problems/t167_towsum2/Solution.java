@@ -1,4 +1,4 @@
-package me.icro.t167_towsum2;
+package me.icro.problems.t167_towsum2;
 
 import java.util.Arrays;
 

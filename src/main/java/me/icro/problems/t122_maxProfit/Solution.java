@@ -1,4 +1,4 @@
-package me.icro.t122_maxProfit;
+package me.icro.problems.t122_maxProfit;
 
 /**
  * 描述:
