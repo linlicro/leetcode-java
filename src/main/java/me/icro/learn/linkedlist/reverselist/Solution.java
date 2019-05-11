@@ -57,7 +57,6 @@ public class Solution {
 
     /*
     递归版本，其关键在于反向工作。假设列表的其余部分已经被反转，现在我该如何反转它前面的部分？
-
      */
     public ListNode reverseList3(ListNode head) {
         if (null == head || null == head.next) return head;
