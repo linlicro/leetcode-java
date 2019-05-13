@@ -24,4 +24,19 @@ public class Solution {
         }
         return false;
     }
+
+    /*
+        双指针: 通过使用具有 不同速度 的快、慢两个指针遍历链表，空间复杂度可以被降低至 O(1)O(1)。慢指针每次移动一步，而快指针每次移动两步。
+     */
+    public boolean hasCycle2(ListNode head) {
+        if (null == head || null == head.next) return false;
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (fast != slow) {
+            if (null == fast || null == fast.next) return false;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
 }
