@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 描述:
- *  https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/6/linked-list/46/
+ * https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/6/linked-list/46/
  *
  * @author Lin
  * @since 2019-05-12 7:30 AM
