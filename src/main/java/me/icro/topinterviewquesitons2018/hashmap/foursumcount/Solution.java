@@ -1,13 +1,12 @@
-package me.icro.topinterviewquesitons2018.hashmap.titletonumber.hashmap.foursumcount;
+package me.icro.topinterviewquesitons2018.hashmap.foursumcount;
 
 import java.util.HashMap;
 
 /**
  * 描述:
- *  https://leetcode-cn.com/explore/interview/card/top-interview-quesitons-in-2018/268/hash-map/1163/
  *
  * @author Lin
- * @since 2019-07-29 1:24 PM
+ * @since 2019-08-12 7:10 PM
  */
 public class Solution {
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
@@ -28,7 +27,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().fourSumCount(new int[] {1, 2},
+        System.out.println(new me.icro.topinterviewquesitons2018.foursumcount.Solution().fourSumCount(new int[] {1, 2},
                 new int[] {-2, -1},
                 new int[] {-1, 2},
                 new int[] {0, 2}));

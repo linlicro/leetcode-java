@@ -10,7 +10,7 @@ import java.util.List;
  * @author Lin
  * @since 2019-08-01 9:43 AM
  */
-public class Solution {
+public class Solution_TimeLimitExceeded {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
         if (null == board || null == words)
@@ -116,7 +116,7 @@ public class Solution {
                 "ab", "cb", "ad", "bd", "ac", "ca", "da", "bc", "db", "adcb", "dabc", "abb", "acb"
         };
 
-        List<String> res = new Solution().findWords(board, words);
+        List<String> res = new Solution_TimeLimitExceeded().findWords(board, words);
         System.out.println(res.toString());
 
     }
