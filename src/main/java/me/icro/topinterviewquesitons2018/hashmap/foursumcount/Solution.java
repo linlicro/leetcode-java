@@ -27,7 +27,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new me.icro.topinterviewquesitons2018.foursumcount.Solution().fourSumCount(new int[] {1, 2},
+        System.out.println(new me.icro.topinterviewquesitons2018.hashmap.foursumcount.Solution().fourSumCount(new int[] {1, 2},
                 new int[] {-2, -1},
                 new int[] {-1, 2},
                 new int[] {0, 2}));
