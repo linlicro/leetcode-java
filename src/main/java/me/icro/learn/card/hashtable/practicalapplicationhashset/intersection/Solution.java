@@ -1,4 +1,4 @@
-package me.icro.learn.card.hashtable.practicalapplicationhashset;
+package me.icro.learn.card.hashtable.practicalapplicationhashset.intersection;
 
 import java.util.*;
 
@@ -36,10 +36,10 @@ public class Solution {
         Set<Integer> set2 = new HashSet<>();
 
         for (int i : nums1) {
-            set1.add(nums1[i]);
+            set1.add(i);
         }
         for (int i : nums2) {
-            set2.add(nums2[i]);
+            set2.add(i);
         }
 
         set1.retainAll(set2);
