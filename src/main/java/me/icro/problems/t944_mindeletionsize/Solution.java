@@ -6,13 +6,15 @@ package me.icro.problems.t944_mindeletionsize;
  **/
 public class Solution {
     public int minDeletionSize(String[] A) {
-        if (null == A || 0 == A.length || 1 >= A[0].length()) {
-            return 0;
+        int res = 0;
+        for (int i = 0; i < A[0].length(); i++) {
+            for (int j = 0; j < A.length - 1; j++) {
+                if (A[j].charAt(i) > A[j + 1].charAt(i)) {
+                    res++;
+                    break;
+                }
+            }
         }
-        int count_should_del = 0;
-        char[] maxCharFlags = new char[A.length];
-
-
-        return count_should_del;
+        return res;
     }
 }
