@@ -9,18 +9,25 @@ package me.icro.problems.t189_rotate;
  */
 public class Solution {
     public void rotate(int[] nums, int k) {
-        if (null == nums || 0 == nums.length) return;
-        if (k <= 0) return;
         k %= nums.length;
-        for (int i = 0; i < k && i < nums.length - 1; i++) {
-            int numMoved = nums.length - 1;
-            int lastOne = nums[nums.length - 1];
-            System.arraycopy(nums, 0, nums, 1, numMoved);
-            nums[0] = lastOne;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int tmp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = tmp;
+            start++;
+            end--;
         }
     }
 
     public static void main(String[] args) {
+        int[] nums0 = new int[] {-1, -100, 3, 99};
+        new Solution().rotate(nums0, 2);
         int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7};
         new Solution().rotate(nums, 3);
         System.out.println(nums);

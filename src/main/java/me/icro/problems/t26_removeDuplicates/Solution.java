@@ -9,25 +9,19 @@ package me.icro.problems.t26_removeDuplicates;
  */
 public class Solution {
     public int removeDuplicates(int[] nums) {
-        if (null == nums || 0 == nums.length)
+        if (null == nums || 0 == nums.length) {
             return 0;
-
-        int lastInt = nums[nums.length - 1];
-        int i = 0;
-        while (i < nums.length) {
-            if (nums[i] == lastInt) {
-                i++;
-                break;
-            }
-            if (nums[i] == nums[i + 1]) {
-                int numMoved = nums.length - i - 1;
-                System.arraycopy(nums, i + 1, nums, i, numMoved);
-                continue;
-            }
-            i++;
         }
 
-        return i;
+        int p = 0, q = 1;
+        while (q < nums.length) {
+            if (nums[p] != nums[q]) {
+                nums[p + 1] = nums[q];
+                p++;
+            }
+            q++;
+        }
+        return p + 1;
     }
 
     public static void main(String[] args) {

@@ -9,13 +9,13 @@ package me.icro.problems.t206_reverselist;
 public class Solution2 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
-        ListNode curr = head;
+        ListNode cur = head;
         ListNode next = null;
-        while (null != curr) {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        while (null != cur) {
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
         }
         return prev;
     }

@@ -1,5 +1,7 @@
 package me.icro.problems.t88_merge;
 
+import java.util.Arrays;
+
 /**
  * 描述:
  *
@@ -8,29 +10,7 @@ package me.icro.problems.t88_merge;
  */
 public class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (null == nums1 || null == nums2) return;
-
-        int index1 = 0;
-        int index2 = 0;
-        while (index1 < m && index2 < n) {
-            if (nums1[index1] < nums2[index2]) {
-                index1++;
-            } else {
-                // num1 右移1位
-                System.arraycopy(nums1, index1, nums1, index1 + 1, (m - index1));
-                nums1[index1] = nums2[index2];
-                index1++;
-                index2++;
-                m++;
-            }
-        }
-
-        if (index2 < n) {
-            while (index2 < n) {
-                nums1[index1] = nums2[index2];
-                index1++;
-                index2++;
-            }
-        }
+        System.arraycopy(nums2, 0, nums1, m, n);
+        Arrays.sort(nums1, 0, m + n);
     }
 }
