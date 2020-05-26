@@ -16,8 +16,9 @@ public class Solution2 {
             counter[t.charAt(i) - 'a']--;
         }
         for (int each : counter) {
-            if (each != 0)
+            if (each != 0) {
                 return false;
+            }
         }
         return true;
     }
