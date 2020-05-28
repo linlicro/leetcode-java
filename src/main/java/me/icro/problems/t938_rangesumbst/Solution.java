@@ -1,5 +1,7 @@
 package me.icro.problems.t938_rangesumbst;
 
+import java.util.Stack;
+
 /**
  * 先理解下 什么是二叉搜索树
  *
@@ -8,17 +10,34 @@ package me.icro.problems.t938_rangesumbst;
  **/
 public class Solution {
     public int rangeSumBST(TreeNode root, int L, int R) {
-        int res = 0;
         if (null == root) {
-            return res;
+            return 0;
         }
-        res += (root.val >= L && root.val <= R) ? root.val : 0;
         if (root.val < L) {
-            res += rangeSumBST(root.right, L, R);
+            return rangeSumBST(root.right, L, R);
         } else if (root.val > R) {
-            res += rangeSumBST(root.left, L, R);
-        } else {
-            res = res + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);
+            return rangeSumBST(root.left, L, R);
+        }
+        return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);
+    }
+
+    public int rangeSumBST2(TreeNode root, int L, int R) {
+        int res = 0;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            if (null != cur) {
+                if (cur.val >= L && cur.val <= R) {
+                    res += cur.val;
+                }
+                if (L < cur.val) {
+                    stack.add(cur.left);
+                }
+                if (R > cur.val) {
+                    stack.add(cur.right);
+                }
+            }
         }
         return res;
     }
