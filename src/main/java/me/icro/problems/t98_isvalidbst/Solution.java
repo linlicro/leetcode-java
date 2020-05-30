@@ -13,9 +13,13 @@ public class Solution {
     }
 
     boolean bstUtil(TreeNode node, long min, long max) {
-        if (null == node) return true;
+        if (null == node) {
+            return true;
+        }
 
-        if (node.val <= min || node.val >= max) return false;
+        if (node.val <= min || node.val >= max) {
+            return false;
+        }
 
         return bstUtil(node.left, min, node.val) && bstUtil(node.right, node.val, max);
     }
