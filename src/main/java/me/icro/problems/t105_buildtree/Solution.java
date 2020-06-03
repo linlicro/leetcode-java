@@ -1,15 +1,25 @@
 package me.icro.problems.t105_buildtree;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author lin
  * @version v 0.1 2020/6/3
  **/
 public class Solution {
+    private Map<Integer, Integer> indexMap;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (null == preorder || 0 == preorder.length) {
             return null;
         }
+        // 构造哈希映射，帮助我们快速定位根节点
+        indexMap = new HashMap<Integer, Integer>();
+        for (int i = 0; i < preorder.length; i++) {
+            indexMap.put(inorder[i], i);
+        }
+
         return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
 
@@ -21,7 +31,7 @@ public class Solution {
             return new TreeNode(preorder[preLeft]);
         }
         TreeNode root = new TreeNode(preorder[preLeft]);
-        int rootIndexInOrder = indexOf(preorder[preLeft], inorder);
+        int rootIndexInOrder = indexMap.get(preorder[preLeft]);
         int leftPreNextLeft = preLeft + 1;
         int leftPreNextRight = preLeft + (rootIndexInOrder - inLeft);
         int leftInNextLeft = inLeft;
@@ -34,15 +44,6 @@ public class Solution {
         int rightInNextRight = inRight;
         root.right = buildTree(preorder, rightPreNextLeft, rightPreNextRight, inorder, rightInNextLeft, rightInNextRight);
         return root;
-    }
-
-    private int indexOf(int c, int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == c) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     public static void main(String[] args) {
