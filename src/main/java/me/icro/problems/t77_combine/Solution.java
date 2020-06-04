@@ -2,6 +2,7 @@ package me.icro.problems.t77_combine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author lin
@@ -16,7 +17,8 @@ public class Solution {
         if (k > n) {
             return result;
         }
-        dfs(n, 1, new ArrayList<>(), k);
+//        dfs(n, 1, new ArrayList<>(), k);
+        find(n, k, 1, new Stack<>());
         return result;
     }
 
@@ -36,6 +38,18 @@ public class Solution {
 
         // remove
         list.remove(list.size() - 1);
+    }
+
+    void find(int n, int k, int begin, Stack<Integer> pre) {
+        if (pre.size() == k) {
+            result.add(new ArrayList<>(pre));
+            return;
+        }
+        for (int i = begin; i <= n - (k - pre.size()) + 1; i++) {
+            pre.add(i);
+            find(n, k, i + 1, pre);
+            pre.pop();
+        }
     }
 
     public static void main(String[] args) {
