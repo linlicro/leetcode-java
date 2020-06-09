@@ -1,7 +1,10 @@
 package me.icro.problems.t169_majorityelement;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * 描述: https://leetcode.com/problems/majority-element/
@@ -27,5 +30,25 @@ public class Solution {
             }
         }
         return majority_element_tmp;
+    }
+
+    public int majorityElement2(int[] nums) {
+        Map<Integer, Long> map = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        long limit = nums.length >> 1;
+        for (Map.Entry<Integer, Long> integerLongEntry : map.entrySet()) {
+            if (integerLongEntry.getValue() > limit) {
+                return integerLongEntry.getKey();
+            }
+        }
+        return -1;
+    }
+
+    public int majorityElement3(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length >> 1];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution().majorityElement2(new int[]{2, 2, 1, 1, 1, 2, 2}));
     }
 }
