@@ -58,4 +58,9 @@ public class Solution {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution().totalNQueens(4));
+        System.out.println(new Solution().totalNQueens(8));
+    }
 }
