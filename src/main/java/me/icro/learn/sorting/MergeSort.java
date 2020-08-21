@@ -41,10 +41,11 @@ public class MergeSort {
             temp[tempIndex++] = arr[j++];
         }
         System.out.println(Arrays.toString(temp));
-        tempIndex = 0;
-        while (left <= right) {
-            arr[left++] = temp[tempIndex++];
-        }
+//        tempIndex = 0;
+//        while (left <= right) {
+//            arr[left++] = temp[tempIndex++];
+//        }
+        Arrays.sort(arr, left,  (right - left) + 1);
     }
 
     public static void main(String[] args) {
