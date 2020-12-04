@@ -1,4 +1,4 @@
-package me.icro.problems.t669trimbst;
+package me.icro.problems.t129sumnumbers;
 
 import lombok.Data;
 
