@@ -6,9 +6,10 @@ package me.icro.lcof.o12exist;
  **/
 public class Solution {
     public boolean exist(char[][] board, String word) {
+        char[] chars = word.toCharArray();
         for (int x = 0; x < board.length; x++) {
             for (int y = 0; y < board[x].length; y++) {
-                if (helper(board, x, y, word, 0)) {
+                if (helper(board, x, y, chars, 0)) {
                     return true;
                 }
             }
@@ -16,8 +17,8 @@ public class Solution {
         return false;
     }
 
-    private boolean helper(char[][] board, int x, int y, String word, int index) {
-        if (index == word.length()) {
+    private boolean helper(char[][] board, int x, int y, char[] chars, int index) {
+        if (index == chars.length) {
             return true;
         }
         if (x < 0 || x > board.length - 1) {
@@ -26,16 +27,16 @@ public class Solution {
         if (y < 0 || y > board[0].length - 1) {
             return false;
         }
-        if (board[x][y] != word.charAt(index)) {
+        if (board[x][y] != chars[index]) {
             return false;
         }
 
         char tmp = board[x][y];
         board[x][y] = '0';
-        boolean res = helper(board, x, y - 1, word, index + 1)
-                || helper(board, x, y + 1, word, index + 1)
-                || helper(board, x - 1, y, word, index + 1)
-                || helper(board, x + 1, y, word, index + 1);
+        boolean res = helper(board, x, y - 1, chars, index + 1)
+                || helper(board, x, y + 1, chars, index + 1)
+                || helper(board, x - 1, y, chars, index + 1)
+                || helper(board, x + 1, y, chars, index + 1);
 
         board[x][y] = tmp;
         return res;
