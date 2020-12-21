@@ -17,6 +17,7 @@
 
 ### 1. links
 
+* greyireland/algorithm-pattern 算法模板 <https://github.com/greyireland/algorithm-pattern>
 * **fucking-algorithm** 手把手撕LeetCode题目，扒各种算法套路的裤子。<https://github.com/labuladong/fucking-algorithm>
 * leetcode LeetCode Solutions: A Record of My Problem Solving Journey. <https://github.com/azl397985856/leetcode>
 * Algorithms and data structures implemented in JavaScript with explanations and links to further readings <https://github.com/trekhleb/javascript-algorithms>
