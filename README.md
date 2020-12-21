@@ -15,7 +15,7 @@
 
 ## 参考资料集
 
-### 1. links
+### 1. Links
 
 * greyireland/algorithm-pattern 算法模板 <https://github.com/greyireland/algorithm-pattern>
 * **fucking-algorithm** 手把手撕LeetCode题目，扒各种算法套路的裤子。<https://github.com/labuladong/fucking-algorithm>
@@ -47,5 +47,9 @@
 * `面试突击` - 《编程之美》
 * `面试突击` - Java 面试的算法问题 <http://www.codespaghetti.com/java-algorithms-questions/>
 
-**请支持正版**, 通过正规渠道购买: ) <https://book.jd.com/>；另外，微信读书上有不少可以白嫖: )
+**请支持正版**, 通过正规渠道购买: ) <https://book.jd.com/>。
 
+### 3. 刷题指北
+
+**平常时** 在 `Links` 中挑个合适的算法参考，按模块化得去学习，比如 `树` > `搜索类` > `二分法` > `双指针`... 同时 配合 `Books` 的书籍，在日常慢慢积累算法的思维逻辑；做题的时候 还可以结合 [LeetCode 卡片](https://leetcode-cn.com/explore/) 一个卡片一个卡片的去做。*注: 做题时 想了10分钟还是完全没有思路的吧，建议直接看下高赞的题解；同时 非常推荐多看看 [国际区](https://leetcode.com/)的评论栏目*
+**面试前** 打算面试的话，提前5-6周，先把之前学的模块，找题目再刷一遍，再把 [剑指 offer](https://leetcode-cn.com/problemset/lcof/) 做做完；  
