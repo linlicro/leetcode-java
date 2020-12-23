@@ -1,4 +1,4 @@
-package me.icro.lcof.t30minstack;
+package me.icro.lcof.o30minstack;
 
 import java.util.Stack;
 
