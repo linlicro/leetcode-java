@@ -17,6 +17,21 @@ public class Solution {
         return dp[n];
     }
 
+    public int cuttingRope2(int n) {
+        if (n <= 3) {
+            return n - 1;
+        }
+        int a = n / 3;
+        int b = n % 3;
+        if (0 == b) {
+            return (int) Math.pow(3, a);
+        }
+        if (1 == b) {
+            return (int) (Math.pow(3, a - 1) * 4);
+        }
+        return (int) (Math.pow(3, a) * 2);
+    }
+
     public static void main(String[] args) {
         System.out.println(new Solution().cuttingRope(10));
     }
